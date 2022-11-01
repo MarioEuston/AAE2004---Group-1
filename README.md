@@ -13,8 +13,8 @@
         <li><a href="#additional-task-1-methodology-results-and-discussion">Additional Task 1 : Methodology Results and Discussion</a></li>
         <li><a href="#additional-task-2-methodology-results-and-discussion">Additional Task 2 : Methodology Results and Discussion</a></li>
         <li><a href="#additional-task-3-methodology-results-and-discussion">Additional Task 3 : Methodology Results and Discussion</a></li>
-        <li><a href="#Reflective-Essay">Reflective Essay</a></li>
-        <li><a href="#Referances">Referances</a></li>
+        <li><a href="#reflective-essays">Reflective Essay</a></li>
+        <li><a href="#referances">Referances</a></li>
    </ol> 
 </details>
 

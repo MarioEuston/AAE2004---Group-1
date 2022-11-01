@@ -27,7 +27,8 @@
   
   
 ## Introduction of the Engineering Tools
+  GitHub is a commercial website and is currently the largest Git Server in the world. Here, you can make friends with other great programmers, you can help contribute   to other people's projects, and others can also give back to your projects, creating a virtuous circle. At the same time, it is also the best resume for developers.   It is clear at a glance which projects you have done, which contributions you have made, and which Codes you have written. It is difficult and nearly impossible to     counterfeit. In Github is also a location that you can save your code and project that you have done. It will automatically help you record code changes, and when     necessary, can help you quickly roll back to the previous historical version. There are many excellent and famous open-source projects shared above. You can use and   download these open-source projects for free under the premise of complying with their licenses. This is also the most attractive part of GitHub. One of its major     advantages is collaborative development. The projects you share, other developers can also contribute to help you improve project functions, fix bugs, and             improve code quality.
 
   
 ## Task 1 : Methodology Results and Discusssion
-  
+  The first task was to find out an appropriate aircraft model that achieve minimum cost for the challenge assigned.

@@ -8,7 +8,7 @@
         <li><a href="#Theory-of-Path-Planning-Algorithm">Theory of Path Planning Algorithm</a></li>
         <li><a href="#Introduction-of-the-Engineering-Tools">Introduction to Engineering Tools</a></li>
         <li><a href="#task-1--methodology-results-and-discusssion">Task 1 : Methodology Results and Discussion</a></li>
-        <li><a href="#Task-2:Methodology-Results-and-Discussion">Task 2 : Methodology Results and Discussion</a></li>
+        <li><a href="#task-2--methodology-results-and-discussion">Task 2 : Methodology Results and Discussion</a></li>
         <li><a href="#Task-3:Methodology-Results-and-Discussion">Task 3 : Methodology Results and Discussion</a></li>
         <li><a href="#Additional-Task-1:Methodology-Results-and-Discussion">Additional Task 1 : Methodology Results and Discussion</a></li>
         <li><a href="#Additional-Task-2-:-Methodology-Results-and-Discussion">Additional Task 2 : Methodology Results and Discussion</a></li>
@@ -32,3 +32,6 @@
   
 ## Task 1 : Methodology Results and Discusssion
   The first task was to find out an appropriate aircraft model that achieve minimum cost for the challenge assigned.
+  
+  
+## Task 2 : Methodology Results and Discussion

@@ -24,6 +24,9 @@
   "write here kingslay"
 
 ## Theory of Path Planning Algorithm
+  Path planning is one of the most critical research problems in robotics. By proposing path planning, many problems in various fields are solved. It has been applied   to guide robots to achieve specific goals, from very simple trajectory planning to choosing an appropriate sequence of actions. By proposing suitable algorithms,       path planning can be widely applied in partial and unknown structured environments.
+  Local path planning generates paths by acquiring data from sensors during robot motion. Therefore, the robot can generate new paths based on the new environment. It   makes this approach more applicable in practice.
+  There are four essential predominant trade-off criteria that must be considered in a path planning algorithm: optimization, completeness, precision                     and execution time.
   
   
 ## Introduction of the Engineering Tools
@@ -32,6 +35,7 @@
   
 ## Task 1 : Methodology Results and Discusssion
   The first task was to find out an appropriate aircraft model that achieve minimum cost for the challenge assigned.
+  The first scenario is to consider 3000 passengers travelling when 
   
   
 ## Task 2 : Methodology Results and Discussion

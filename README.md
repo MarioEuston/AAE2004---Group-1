@@ -35,7 +35,7 @@
   
 ## Task 1 : Methodology Results and Discusssion
   The first task was to find out an appropriate aircraft model that achieve minimum cost for the challenge assigned.
-  The first scenario is to consider 3000 passengers travelling when 
+  The first scenario is to consider 3000 passengers travelling within one week when the maximum number of flights that we can afford is 12 per one week. The time cost   should be medium and the fuel cost should be 0.76$/kg. Considering this scenario the most appropriate aircraft is A330-900neo. The second scenario is where 1250       passengers to travel within this month and we can afford 5 flights per week which makes it 20 flights per month.In this scenario the most profitable aircraft model     is A350-900.
   
   
 ## Task 2 : Methodology Results and Discussion

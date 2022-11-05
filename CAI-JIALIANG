@@ -15,10 +15,44 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 show_animation = True
-
+pn = int(input("passenger number:"))
+max_f = int(input("maximum flight:"))
+time_cost = str(input("Time cost:"))
+fuel_cost = eval(input("Fuel cost($/kg):"))
+A321_fc = 54
+A330_fc = 84
+A350_fc = 90
+A1_fc = 80
+A2_fc = 40
+A321_pc = 200
+A330_pc = 300
+A350_pc = 350
+A1_pc = 450
+A2_pc = 299
+A321_tc_low = 10
+A330_tc_low = 15
+A350_tc_low = 20
+A1_tc_medium = 24
+A2_tc_medium = 30
+A321_tc_medium = 15
+A330_tc_medium = 21
+A350_tc_medium = 27
+A321_tc_high = 20
+A330_tc_high = 27
+A350_tc_high = 34
+A321_fix_c = 1800
+A330_fix_c = 2000
+A350_fix_c = 2500
+A1_fix_c = 2000
+A2_fix_c = 2500
+A321_fn = math.ceil(pn/A321_pc)
+A330_fn = math.ceil(pn/A330_pc)
+A350_fn = math.ceil(pn/A350_pc)
+A1_fn = math.ceil(pn/A1_pc)
+A2_fn = math.ceil(pn/A2_pc)
+cost = 1
 
 class AStarPlanner:
-
     def __init__(self, ox, oy, resolution, rr, fc_x, fc_y, tc_x, tc_y, jc_x, jc_y):
         """
         Initialize grid map for a star planning
@@ -63,6 +97,7 @@ class AStarPlanner:
                 self.cost) + "," + str(self.parent_index)
 
     def planning(self, sx, sy, gx, gy):
+        global cost
         """
         A star path search
         input:
@@ -71,14 +106,179 @@ class AStarPlanner:
             gx: goal x position [m]
             gy: goal y position [m]
         output:
-            rx: x position list of the final path
-            ry: y position list of the final path
+            rx1: x position list of the final path
+            ry1: y position list of the final path
         """
 
         start_node = self.Node(self.calc_xy_index(sx, self.min_x), # calculate the index based on given position
                                self.calc_xy_index(sy, self.min_y), 0.0, -1) # set cost zero, set parent index -1
         goal_node = self.Node(self.calc_xy_index(gx, self.min_x), # calculate the index based on given position
                               self.calc_xy_index(gy, self.min_y), 0.0, -1)
+
+        open_set, closed_set = dict(), dict() 
+        # open_set: node not been tranversed yet. closed_set: node have been tranversed already
+        open_set[self.calc_grid_index(start_node)] = start_node # node index is the grid index
+
+        while 1:
+            if len(open_set) == 0:
+                print("Open set is empty..")
+                break
+
+            c_id = min(
+                open_set,
+                key=lambda o: open_set[o].cost + self.calc_heuristic(self, goal_node, open_set[o]))
+                # g(n) and h(n): calculate the distance between the goal node and openset
+            current1 = open_set[c_id]
+
+            # show graph
+            if show_animation:  # pragma: no cover
+                plt.plot(self.calc_grid_position(current1.x, self.min_x),
+                         self.calc_grid_position(current1.y, self.min_y), "xc")
+                # for stopping simulation with the esc key.
+                plt.gcf().canvas.mpl_connect('key_release_event',
+                                             lambda event: [exit(
+                                                 0) if event.key == 'escape' else None])
+                if len(closed_set.keys()) % 10 == 0:
+                    plt.pause(0.001)
+
+            # reaching goal
+            if current1.x == goal_node.x and current1.y == goal_node.y:
+                print("First Trip time required -> ",current1.cost )
+                cost = current1.cost
+                goal_node.parent_index = current1.parent_index
+                goal_node.cost = current1.cost
+                if time_cost == "low":
+                    if A321_fn > max_f:
+                        cost_A321 = "Not available"
+                    else:
+                        cost_A321 = (A321_fc*goal_node.cost*fuel_cost + A321_tc_low*goal_node.cost + A321_fix_c)*A321_fn
+                    if A330_fn > max_f:
+                        cost_A330 = "Not available"
+                    else:
+                        cost_A330 = (A330_fc*goal_node.cost*fuel_cost + A330_tc_low*goal_node.cost + A330_fix_c)*A330_fn
+                    if A350_fn > max_f:
+                        cost_A350 = "Not available"
+                    else:
+                        cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_low*goal_node.cost + A350_fix_c)*A350_fn
+                    print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
+                    break
+
+                elif time_cost == "medium":
+                    if A321_fn > max_f:
+                        cost_A321 = "Not available"
+                    else:
+                        cost_A321 = (A321_fc*goal_node.cost*fuel_cost + A321_tc_medium*goal_node.cost + A321_fix_c)*A321_fn
+                    if A330_fn > max_f:
+                        cost_A330 = "Not available"
+                    else:
+                        cost_A330 = (A330_fc*goal_node.cost*fuel_cost + A330_tc_medium*goal_node.cost + A330_fix_c)*A330_fn
+                    if A350_fn > max_f:
+                        cost_A350 = "Not available"
+                    else:
+                        cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_medium*goal_node.cost + A350_fix_c)*A350_fn
+                    if A1_fn > max_f:
+                        cost_A1 = "Not available"
+                    else:
+                        cost_A1 = (A1_fc*goal_node.cost*fuel_cost + A1_tc_medium*goal_node.cost + A1_fix_c)*A1_fn
+                    if A2_fn > max_f:
+                        cost_A2 = "Not available"
+                    else:
+                        cost_A2 = (A2_fc*goal_node.cost*fuel_cost + A2_tc_medium*goal_node.cost + A2_fix_c)*A2_fn
+                    print("A321:{}$\nA330:{}$\nA350:{}$\nA1:{}$\nA2:{}".format(cost_A321,cost_A330,cost_A350,cost_A1,cost_A2))
+                    break
+
+                elif time_cost == "high":
+                    if A321_fn > max_f:
+                        cost_A321 = "Not available"
+                    else:
+                        cost_A321 = (A321_fc*goal_node.cost*fuel_cost + A321_tc_high*goal_node.cost + A321_fix_c)*A321_fn
+                    if A330_fn > max_f:
+                        cost_A330 = "Not available"
+                    else:
+                        cost_A330 = (A330_fc*goal_node.cost*fuel_cost + A330_tc_high*goal_node.cost + A330_fix_c)*A330_fn
+                    if A350_fn > max_f:
+                        cost_A350 = "Not available"
+                    else:
+                        cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_high*goal_node.cost + A350_fix_c)*A350_fn
+                    print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
+                    break
+            
+                else:
+                    print("You should input 'low', 'medium', or 'high'in 'Time cost:")
+            
+            # Remove the item from the open set
+            del open_set[c_id]
+
+            # Add it to the closed set
+            closed_set[c_id] = current1
+
+            # print(len(closed_set))
+
+            # expand_grid search grid based on motion model
+            for i, _ in enumerate(self.motion): # tranverse the motion matrix
+                node = self.Node(current1.x + self.motion[i][0],
+                                 current1.y + self.motion[i][1],
+                                 current1.cost + self.motion[i][2] * self.costPerGrid, c_id)
+                
+                ## add more cost in cost intensive area 1
+                if self.calc_grid_position(node.x, self.min_x) in self.tc_x:
+                    if self.calc_grid_position(node.y, self.min_y) in self.tc_y:
+                        # print("cost intensive area!!")
+                        node.cost = node.cost + self.Delta_C1 * self.motion[i][2]
+                
+                # add more cost in cost intensive area 2
+                if self.calc_grid_position(node.x, self.min_x) in self.fc_x:
+                    if self.calc_grid_position(node.y, self.min_y) in self.fc_y:
+                        # print("cost intensive area!!")
+                        node.cost = node.cost + self.Delta_C2 * self.motion[i][2]
+                
+                # reduce cost in jet stream
+                if self.calc_grid_position(node.x, self.min_x) in self.tc_x:
+                    if self.calc_grid_position(node.y, self.min_y) in self.tc_y:
+                        # print("jet stream!!")
+                        node.cost = node.cost + self.Delta_C3 * self.motion[i][2]
+                
+                n_id = self.calc_grid_index(node)
+
+                # If the node is not safe, do nothing
+                if not self.verify_node(node):
+                    continue
+
+                if n_id in closed_set:
+                    continue
+
+                if n_id not in open_set:
+                    open_set[n_id] = node  # discovered a new node
+                else:
+                    if open_set[n_id].cost > node.cost:
+                        # This path is the best until now. record it
+                        open_set[n_id] = node
+
+        rx1, ry1 = self.calc_final_path(goal_node, closed_set)
+        # print(len(closed_set))
+        # print(len(open_set))
+
+        return rx1, ry1
+        
+
+    def planning(self, gx, gy, gx2, gy2):
+        global cost
+        """
+        A star path search
+        input:
+            s_x: start x position [m]
+            s_y: start y position [m]
+            gx: goal x position [m]
+            gy: goal y position [m]
+        output:
+            rx2: x position list of the final path
+            ry2: y position list of the final path
+        """
+
+        start_node = self.Node(self.calc_xy_index(gx, self.min_x), # calculate the index based on given position
+                               self.calc_xy_index(gy, self.min_y), 0.0, -1) # set cost zero, set parent index -1
+        goal_node = self.Node(self.calc_xy_index(gx2, self.min_x), # calculate the index based on given position
+                              self.calc_xy_index(gy2, self.min_y), 0.0, -1)
 
         open_set, closed_set = dict(), dict() 
         # open_set: node not been tranversed yet. closed_set: node have been tranversed already
@@ -108,44 +308,10 @@ class AStarPlanner:
 
             # reaching goal
             if current.x == goal_node.x and current.y == goal_node.y:
-                print("Total Trip time required -> ",current.cost )
+                print("Second Trip time required -> ",current.cost )
+                cost = cost + current.cost
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
-                pn = int(input("passenger number:"))
-                max_f = int(input("maximum flight:"))
-                time_cost = str(input("Time cost:"))
-                fuel_cost = eval(input("Fuel cost($/kg):"))
-                A321_fc = 54
-                A330_fc = 84
-                A350_fc = 90
-                A1_fc = 80
-                A2_fc = 40
-                A321_pc = 200
-                A330_pc = 300
-                A350_pc = 350
-                A1_pc = 450
-                A2_pc = 299
-                A321_tc_low = 10
-                A330_tc_low = 15
-                A350_tc_low = 20
-                A1_tc_medium = 24
-                A2_tc_medium = 30
-                A321_tc_medium = 15
-                A330_tc_medium = 21
-                A350_tc_medium = 27
-                A321_tc_high = 20
-                A330_tc_high = 27
-                A350_tc_high = 34
-                A321_fix_c = 1800
-                A330_fix_c = 2000
-                A350_fix_c = 2500
-                A1_fix_c = 2000
-                A2_fix_c = 2500
-                A321_fn = math.ceil(pn/A321_pc)
-                A330_fn = math.ceil(pn/A330_pc)
-                A350_fn = math.ceil(pn/A350_pc)
-                A1_fn = math.ceil(pn/A1_pc)
-                A2_fn = math.ceil(pn/A2_pc)
                 if time_cost == "low":
                     if A321_fn > max_f:
                         cost_A321 = "Not available"
@@ -253,11 +419,176 @@ class AStarPlanner:
                         # This path is the best until now. record it
                         open_set[n_id] = node
 
-        rx, ry = self.calc_final_path(goal_node, closed_set)
+        rx2, ry2 = self.calc_final_path(goal_node, closed_set)
         # print(len(closed_set))
         # print(len(open_set))
 
-        return rx, ry
+        return rx2, ry2
+
+    def planning(self, gx2, gy2, gx3, gy3):
+        global cost   
+        """
+        A star path search
+        input:
+            s_x: start x position [m]
+            s_y: start y position [m]
+            gx: goal x position [m]
+            gy: goal y position [m]
+        output:
+            rx2: x position list of the final path
+            ry2: y position list of the final path
+        """
+
+        start_node = self.Node(self.calc_xy_index(gx2, self.min_x), # calculate the index based on given position
+                               self.calc_xy_index(gy2, self.min_y), 0.0, -1) # set cost zero, set parent index -1
+        goal_node = self.Node(self.calc_xy_index(gx3, self.min_x), # calculate the index based on given position
+                              self.calc_xy_index(gy3, self.min_y), 0.0, -1)
+
+        open_set, closed_set = dict(), dict() 
+        # open_set: node not been tranversed yet. closed_set: node have been tranversed already
+        open_set[self.calc_grid_index(start_node)] = start_node # node index is the grid index
+
+        while 1:
+            if len(open_set) == 0:
+                print("Open set is empty..")
+                break
+
+            c_id = min(
+                open_set,
+                key=lambda o: open_set[o].cost + self.calc_heuristic(self, goal_node, open_set[o]))
+                # g(n) and h(n): calculate the distance between the goal node and openset
+            current3 = open_set[c_id]
+
+            # show graph
+            if show_animation:  # pragma: no cover
+                plt.plot(self.calc_grid_position(current3.x, self.min_x),
+                         self.calc_grid_position(current3.y, self.min_y), "xc")
+                # for stopping simulation with the esc key.
+                plt.gcf().canvas.mpl_connect('key_release_event',
+                                             lambda event: [exit(
+                                                 0) if event.key == 'escape' else None])
+                if len(closed_set.keys()) % 10 == 0:
+                    plt.pause(0.001)
+
+            # reaching goal
+            if current3.x == goal_node.x and current3.y == goal_node.y:
+                print("Third Trip time required -> ",current3.cost )
+                cost = cost + current3.cost
+                goal_node.parent_index = current3.parent_index
+                goal_node.cost = current3.cost
+                if time_cost == "low":
+                    if A321_fn > max_f:
+                        cost_A321 = "Not available"
+                    else:
+                        cost_A321 = (A321_fc*goal_node.cost*fuel_cost + A321_tc_low*goal_node.cost + A321_fix_c)*A321_fn
+                    if A330_fn > max_f:
+                        cost_A330 = "Not available"
+                    else:
+                        cost_A330 = (A330_fc*goal_node.cost*fuel_cost + A330_tc_low*goal_node.cost + A330_fix_c)*A330_fn
+                    if A350_fn > max_f:
+                        cost_A350 = "Not available"
+                    else:
+                        cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_low*goal_node.cost + A350_fix_c)*A350_fn
+                    print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
+                    break
+
+                elif time_cost == "medium":
+                    if A321_fn > max_f:
+                        cost_A321 = "Not available"
+                    else:
+                        cost_A321 = (A321_fc*goal_node.cost*fuel_cost + A321_tc_medium*goal_node.cost + A321_fix_c)*A321_fn
+                    if A330_fn > max_f:
+                        cost_A330 = "Not available"
+                    else:
+                        cost_A330 = (A330_fc*goal_node.cost*fuel_cost + A330_tc_medium*goal_node.cost + A330_fix_c)*A330_fn
+                    if A350_fn > max_f:
+                        cost_A350 = "Not available"
+                    else:
+                        cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_medium*goal_node.cost + A350_fix_c)*A350_fn
+                    if A1_fn > max_f:
+                        cost_A1 = "Not available"
+                    else:
+                        cost_A1 = (A1_fc*goal_node.cost*fuel_cost + A1_tc_medium*goal_node.cost + A1_fix_c)*A1_fn
+                    if A2_fn > max_f:
+                        cost_A2 = "Not available"
+                    else:
+                        cost_A2 = (A2_fc*goal_node.cost*fuel_cost + A2_tc_medium*goal_node.cost + A2_fix_c)*A2_fn
+                    print("A321:{}$\nA330:{}$\nA350:{}$\nA1:{}$\nA2:{}".format(cost_A321,cost_A330,cost_A350,cost_A1,cost_A2))
+                    break
+
+                elif time_cost == "high":
+                    if A321_fn > max_f:
+                        cost_A321 = "Not available"
+                    else:
+                        cost_A321 = (A321_fc*goal_node.cost*fuel_cost + A321_tc_high*goal_node.cost + A321_fix_c)*A321_fn
+                    if A330_fn > max_f:
+                        cost_A330 = "Not available"
+                    else:
+                        cost_A330 = (A330_fc*goal_node.cost*fuel_cost + A330_tc_high*goal_node.cost + A330_fix_c)*A330_fn
+                    if A350_fn > max_f:
+                        cost_A350 = "Not available"
+                    else:
+                        cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_high*goal_node.cost + A350_fix_c)*A350_fn
+                    print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
+                    break
+            
+                else:
+                    print("You should input 'low', 'medium', or 'high'in 'Time cost:")
+            
+            # Remove the item from the open set
+            del open_set[c_id]
+
+            # Add it to the closed set
+            closed_set[c_id] = current3
+
+            # print(len(closed_set))
+
+            # expand_grid search grid based on motion model
+            for i, _ in enumerate(self.motion): # tranverse the motion matrix
+                node = self.Node(current3.x + self.motion[i][0],
+                                 current3.y + self.motion[i][1],
+                                 current3.cost + self.motion[i][2] * self.costPerGrid, c_id)
+                
+                ## add more cost in cost intensive area 1
+                if self.calc_grid_position(node.x, self.min_x) in self.tc_x:
+                    if self.calc_grid_position(node.y, self.min_y) in self.tc_y:
+                        # print("cost intensive area!!")
+                        node.cost = node.cost + self.Delta_C1 * self.motion[i][2]
+                
+                # add more cost in cost intensive area 2
+                if self.calc_grid_position(node.x, self.min_x) in self.fc_x:
+                    if self.calc_grid_position(node.y, self.min_y) in self.fc_y:
+                        # print("cost intensive area!!")
+                        node.cost = node.cost + self.Delta_C2 * self.motion[i][2]
+                
+                # reduce cost in jet stream
+                if self.calc_grid_position(node.x, self.min_x) in self.tc_x:
+                    if self.calc_grid_position(node.y, self.min_y) in self.tc_y:
+                        # print("jet stream!!")
+                        node.cost = node.cost + self.Delta_C3 * self.motion[i][2]
+                
+                n_id = self.calc_grid_index(node)
+
+                # If the node is not safe, do nothing
+                if not self.verify_node(node):
+                    continue
+
+                if n_id in closed_set:
+                    continue
+
+                if n_id not in open_set:
+                    open_set[n_id] = node  # discovered a new node
+                else:
+                    if open_set[n_id].cost > node.cost:
+                        # This path is the best until now. record it
+                        open_set[n_id] = node
+
+        rx3, ry3 = self.calc_final_path(goal_node, closed_set)
+        # print(len(closed_set))
+        # print(len(open_set))
+
+        return rx3, ry3
+        
 
     def calc_final_path(self, goal_node, closed_set):
         # generate final course
@@ -372,8 +703,12 @@ def main():
     # start and goal position
     sx = 0.0  # [m]
     sy = -5.0  # [m]
-    gx = 35.0  # [m]
-    gy = 45.0  # [m]
+    gx = 5.0  # [m]
+    gy = 30.0  # [m]
+    gx2 = 20.0
+    gy2 = 2.0
+    gx3 = 35.0
+    gy3 = 45.0
     grid_size = 1  # [m]
     robot_radius = 1.0  # [m]
 
@@ -429,25 +764,90 @@ def main():
 
 
     if show_animation:  # pragma: no cover
-        plt.plot(ox, oy, ".k") # plot the obstacle
-        plt.plot(sx, sy, "og") # plot the start position 
-        plt.plot(gx, gy, "xb") # plot the end position
-        
+        plt.plot(ox, oy, ".k") # plot the obstacle        
         plt.plot(fc_x, fc_y, "oy") # plot the cost intensive area 1
         plt.plot(tc_x, tc_y, "or") # plot the cost intensive area 2
         plt.plot(jc_x, jc_y, "og") # plot the jet stream
+        plt.plot(sx, sy, "og") # plot the start position 
+        plt.plot(gx, gy, "og") # plot the checkpoint1 position
+        plt.plot(gx2, gy2, "og") # plot the checkpoint2 position
+        plt.plot(gx3, gy3, "og") # plot the end position
 
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
 
     a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, jc_x, jc_y)
-    rx, ry = a_star.planning(sx, sy, gx, gy)
+    rx1, ry1 = a_star.planning(sx, sy, gx, gy)
+    rx2, ry2 = a_star.planning(gx, gy, gx2, gy2)
+    rx3, ry3 = a_star.planning(gx2, gy2, gx3, gy3)
+    print("Total Trip time required -> ",cost )
+    if time_cost == "low":
+        if A321_fn > max_f:
+            cost_A321 = "Not available"
+        else:
+            cost_A321 = (A321_fc*cost*fuel_cost + A321_tc_low*cost + A321_fix_c)*A321_fn
+        if A330_fn > max_f:
+            cost_A330 = "Not available"
+        else:
+            cost_A330 = (A330_fc*cost*fuel_cost + A330_tc_low*cost + A330_fix_c)*A330_fn
+        if A350_fn > max_f:
+            cost_A350 = "Not available"
+        else:
+            cost_A350 = (A350_fc*cost*fuel_cost + A350_tc_low*cost + A350_fix_c)*A350_fn
+        print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
+        
+
+    elif time_cost == "medium":
+        if A321_fn > max_f:
+            cost_A321 = "Not available"
+        else:
+            cost_A321 = (A321_fc*cost*fuel_cost + A321_tc_medium*cost + A321_fix_c)*A321_fn
+        if A330_fn > max_f:
+            cost_A330 = "Not available"
+        else:
+            cost_A330 = (A330_fc*cost*fuel_cost + A330_tc_medium*cost + A330_fix_c)*A330_fn
+        if A350_fn > max_f:
+            cost_A350 = "Not available"
+        else:
+            cost_A350 = (A350_fc*cost*fuel_cost + A350_tc_medium*cost + A350_fix_c)*A350_fn
+        if A1_fn > max_f:
+            cost_A1 = "Not available"
+        else:
+            cost_A1 = (A1_fc*cost*fuel_cost + A1_tc_medium*cost + A1_fix_c)*A1_fn
+        if A2_fn > max_f:
+            cost_A2 = "Not available"
+        else:
+            cost_A2 = (A2_fc*cost*fuel_cost + A2_tc_medium*cost + A2_fix_c)*A2_fn
+        print("A321:{}$\nA330:{}$\nA350:{}$\nA1:{}$\nA2:{}".format(cost_A321,cost_A330,cost_A350,cost_A1,cost_A2))
+        
+
+    elif time_cost == "high":
+        if A321_fn > max_f:
+            cost_A321 = "Not available"
+        else:
+            cost_A321 = (A321_fc*cost*fuel_cost + A321_tc_high*cost + A321_fix_c)*A321_fn
+        if A330_fn > max_f:
+            cost_A330 = "Not available"
+        else:
+            cost_A330 = (A330_fc*cost*fuel_cost + A330_tc_high*cost + A330_fix_c)*A330_fn
+        if A350_fn > max_f:
+            cost_A350 = "Not available"
+        else:
+            cost_A350 = (A350_fc*cost*fuel_cost + A350_tc_high*cost + A350_fix_c)*A350_fn
+        print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
+        
+            
+    else:
+        print("You should input 'low', 'medium', or 'high'in 'Time cost:")
 
     if show_animation:  # pragma: no cover
-        plt.plot(rx, ry, "-r") # show the route 
+        plt.plot(rx1, ry1, "-r") # show the route 
+        plt.plot(rx2, ry2, "-r")
+        plt.plot(rx3, ry3, "-r")
         plt.pause(0.001) # pause 0.001 seconds
         plt.show() # show the plot
 
 
 if __name__ == '__main__':
     main()
+

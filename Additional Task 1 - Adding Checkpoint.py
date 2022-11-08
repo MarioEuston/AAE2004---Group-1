@@ -5,6 +5,7 @@ author: Atsushi Sakai(@Atsushi_twi)
 See Wikipedia article (https://en.wikipedia.org/wiki/A*_search_algorithm)
 This is the simple code for path planning class
 
+modified by: CAI Jia Liang, CHAN Pak Lam
 
 """
 
@@ -17,10 +18,10 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 show_animation = True
-pn = int(input("passenger number:"))
-max_f = int(input("maximum flight:"))
-time_cost = str(input("Time cost:"))
-fuel_cost = eval(input("Fuel cost($/kg):"))
+pn = int(input("Passenger Number (per week):"))
+max_f = int(input("Maximum Flight (per week):"))
+time_cost = str(input("Time Cost (Please input 'low', 'medium' or 'high'):"))
+fuel_cost = eval(input("Fuel Cost($/kg):"))
 A321_fc = 54
 A330_fc = 84
 A350_fc = 90

@@ -4,6 +4,8 @@ author: Atsushi Sakai(@Atsushi_twi)
         Nikos Kanargias (nkana@tee.gr)
 See Wikipedia article (https://en.wikipedia.org/wiki/A*_search_algorithm)
 This is the simple code for path planning class
+
+modified by: CAI Jia Liang, CHAN Pak Lam
 """
 
 

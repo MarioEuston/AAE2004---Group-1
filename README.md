@@ -34,10 +34,10 @@
 ![download](https://user-images.githubusercontent.com/116062601/200479345-c0bce238-ef5b-4c24-87c1-0686317624c2.jpeg)
 
 ### Python
+  Python is an object-oriented, interpreted, high-level, dynamically semantic programming language. It is particularly desirable for Rapid Application Development as well as for usage as a scripting or glue language to tie existing components together due to its dynamic binding, dynamic typing, and high-level built-in data structures. Python's straightforward syntax prioritizes readability and makes it simple to learn, which lowers the cost of program maintenance. Python's support for modules and packages promotes the modularity and reuse of code in programs. For all popular platforms, the Python interpreter and the comprehensive standard library are freely distributable and available in source or binary form.
 
-
-
-
+The edit-test-debug cycle is extraordinarily quick because there is no compilation step. Python programs are simple to debug since a segmentation failure is never caused by a bug or incorrect input. Instead, the interpreter raises an exception when it finds a mistake. The interpreter prints a stack trace if the application doesn't catch the exception. Setting breakpoints, evaluating arbitrary expressions, inspecting local and global variables, stepping through the code one line at a time, and other features are all possible with a source-level debugger. Python's ability to perform introspection is demonstrated by the debugger, which is developed in Python. Contrarily, adding a few print statements to a program is frequently the easiest method to debug it.
+ 
 ![GitHub-Logo](https://user-images.githubusercontent.com/116062601/200479772-33ef1cab-c8b6-4f94-b6f6-31398eae187d.png)
 
 ### Github

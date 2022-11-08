@@ -4,9 +4,6 @@ author: Atsushi Sakai(@Atsushi_twi)
         Nikos Kanargias (nkana@tee.gr)
 See Wikipedia article (https://en.wikipedia.org/wiki/A*_search_algorithm)
 This is the simple code for path planning class
-
-modified by: CAI Jia Liang, CHAN Pak Lam
-
 """
 
 
@@ -18,25 +15,19 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 show_animation = True
-pn = int(input("Passenger Number (per week):"))
-max_f = int(input("Maximum Flight (per week):"))
-time_cost = str(input("Time Cost (Please input 'low', 'medium' or 'high'):"))
-fuel_cost = eval(input("Fuel Cost($/kg):"))
+pn = int(input("passenger number:"))
+max_f = int(input("maximum flight:"))
+time_cost = str(input("Time cost:"))
+fuel_cost = eval(input("Fuel cost($/kg):"))
 A321_fc = 54
 A330_fc = 84
 A350_fc = 90
-A1_fc = 80
-A2_fc = 40
 A321_pc = 200
 A330_pc = 300
 A350_pc = 350
-A1_pc = 450
-A2_pc = 299
 A321_tc_low = 10
 A330_tc_low = 15
 A350_tc_low = 20
-A1_tc_medium = 24
-A2_tc_medium = 30
 A321_tc_medium = 15
 A330_tc_medium = 21
 A350_tc_medium = 27
@@ -46,13 +37,9 @@ A350_tc_high = 34
 A321_fix_c = 1800
 A330_fix_c = 2000
 A350_fix_c = 2500
-A1_fix_c = 2000
-A2_fix_c = 2500
 A321_fn = math.ceil(pn/A321_pc)
 A330_fn = math.ceil(pn/A330_pc)
 A350_fn = math.ceil(pn/A350_pc)
-A1_fn = math.ceil(pn/A1_pc)
-A2_fn = math.ceil(pn/A2_pc)
 cost = 1
 
 class AStarPlanner:
@@ -179,15 +166,7 @@ class AStarPlanner:
                         cost_A350 = "Not available"
                     else:
                         cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_medium*goal_node.cost + A350_fix_c)*A350_fn
-                    if A1_fn > max_f:
-                        cost_A1 = "Not available"
-                    else:
-                        cost_A1 = (A1_fc*goal_node.cost*fuel_cost + A1_tc_medium*goal_node.cost + A1_fix_c)*A1_fn
-                    if A2_fn > max_f:
-                        cost_A2 = "Not available"
-                    else:
-                        cost_A2 = (A2_fc*goal_node.cost*fuel_cost + A2_tc_medium*goal_node.cost + A2_fix_c)*A2_fn
-                    print("A321:{}$\nA330:{}$\nA350:{}$\nA1:{}$\nA2:{}".format(cost_A321,cost_A330,cost_A350,cost_A1,cost_A2))
+                    print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
                     break
 
                 elif time_cost == "high":
@@ -344,15 +323,7 @@ class AStarPlanner:
                         cost_A350 = "Not available"
                     else:
                         cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_medium*goal_node.cost + A350_fix_c)*A350_fn
-                    if A1_fn > max_f:
-                        cost_A1 = "Not available"
-                    else:
-                        cost_A1 = (A1_fc*goal_node.cost*fuel_cost + A1_tc_medium*goal_node.cost + A1_fix_c)*A1_fn
-                    if A2_fn > max_f:
-                        cost_A2 = "Not available"
-                    else:
-                        cost_A2 = (A2_fc*goal_node.cost*fuel_cost + A2_tc_medium*goal_node.cost + A2_fix_c)*A2_fn
-                    print("A321:{}$\nA330:{}$\nA350:{}$\nA1:{}$\nA2:{}".format(cost_A321,cost_A330,cost_A350,cost_A1,cost_A2))
+                    print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
                     break
 
                 elif time_cost == "high":
@@ -508,15 +479,7 @@ class AStarPlanner:
                         cost_A350 = "Not available"
                     else:
                         cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_medium*goal_node.cost + A350_fix_c)*A350_fn
-                    if A1_fn > max_f:
-                        cost_A1 = "Not available"
-                    else:
-                        cost_A1 = (A1_fc*goal_node.cost*fuel_cost + A1_tc_medium*goal_node.cost + A1_fix_c)*A1_fn
-                    if A2_fn > max_f:
-                        cost_A2 = "Not available"
-                    else:
-                        cost_A2 = (A2_fc*goal_node.cost*fuel_cost + A2_tc_medium*goal_node.cost + A2_fix_c)*A2_fn
-                    print("A321:{}$\nA330:{}$\nA350:{}$\nA1:{}$\nA2:{}".format(cost_A321,cost_A330,cost_A350,cost_A1,cost_A2))
+                    print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
                     break
 
                 elif time_cost == "high":
@@ -813,15 +776,7 @@ def main():
             cost_A350 = "Not available"
         else:
             cost_A350 = (A350_fc*cost*fuel_cost + A350_tc_medium*cost + A350_fix_c)*A350_fn
-        if A1_fn > max_f:
-            cost_A1 = "Not available"
-        else:
-            cost_A1 = (A1_fc*cost*fuel_cost + A1_tc_medium*cost + A1_fix_c)*A1_fn
-        if A2_fn > max_f:
-            cost_A2 = "Not available"
-        else:
-            cost_A2 = (A2_fc*cost*fuel_cost + A2_tc_medium*cost + A2_fix_c)*A2_fn
-        print("A321:{}$\nA330:{}$\nA350:{}$\nA1:{}$\nA2:{}".format(cost_A321,cost_A330,cost_A350,cost_A1,cost_A2))
+        print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
         
 
     elif time_cost == "high":
@@ -853,4 +808,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-

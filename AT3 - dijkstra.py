@@ -4,6 +4,8 @@ Grid based Dijkstra planning
 
 author: Atsushi Sakai(@Atsushi_twi)
 
+modified by: CHAN Pak Lam, CAI Jia Laing
+
 """
 
 import matplotlib.pyplot as plt

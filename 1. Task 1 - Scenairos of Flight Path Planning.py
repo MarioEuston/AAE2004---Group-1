@@ -50,7 +50,6 @@ class AStarPlanner:
 
         self.Delta_C1 = 0.2 # cost intensive area 1 modifier
         self.Delta_C2 = 0.4 # cost intensive area 2 modifier
-        self.Delta_C3 = -0.05 # jet stream modifier
 
         self.costPerGrid = 1 
 
@@ -213,11 +212,6 @@ class AStarPlanner:
                         # print("cost intensive area!!")
                         node.cost = node.cost + self.Delta_C2 * self.motion[i][2]
                
-                # reduce cost in jet stream
-                if self.calc_grid_position(node.x, self.min_x) in self.tc_x:
-                    if self.calc_grid_position(node.y, self.min_y) in self.tc_y:
-                        # print("jet stream!!")
-                        node.cost = node.cost + self.Delta_C3 * self.motion[i][2]
                
                 n_id = self.calc_grid_index(node)
 
@@ -401,15 +395,8 @@ def main():
         for j in range(0, 20):
             fc_x.append(i)
             fc_y.append(j)
-   
-    # set the jet stream
-    jc_x, jc_y = [], []
-    for i in range(-10, 60):
-        for j in range(18, 23):
-            jc_x.append(i)
-            jc_y.append(j)
-
-
+                
+          
     if show_animation:  # pragma: no cover
         plt.plot(ox, oy, ".k") # plot the obstacle
         plt.plot(sx, sy, "og") # plot the start position

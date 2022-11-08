@@ -4,6 +4,7 @@ Probabilistic Road Map (PRM) Planner
 
 author: Atsushi Sakai (@Atsushi_twi)
 
+modified by: CHAN Pak Lam, CAI Jia Liang
 """
 
 import math

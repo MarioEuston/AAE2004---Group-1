@@ -17,8 +17,8 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 show_animation = True
-pn = int(input("Passenger Number:"))
-max_f = int(input("Maximum Flight:"))
+pn = int(input("Passenger Number (per week):"))
+max_f = int(input("Maximum Flight (per week):"))
 time_cost = str(input("Time Cost (Please enter 'low', 'medium', or 'high'):"))
 fuel_cost = eval(input("Fuel cost($/kg):"))
 

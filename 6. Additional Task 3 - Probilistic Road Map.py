@@ -20,6 +20,13 @@ MAX_EDGE_LEN = 30.0  # [m] Maximum edge length
 show_animation = True
 
 
+pn = int(input("Passenger Number (per week):"))
+max_f = int(input("Maximum Flight (per week):"))
+time_cost = str(input("Time Cost (Please enter 'low', 'medium', or 'high'):"))
+fuel_cost = eval(input("Fuel cost($/kg):"))
+
+
+
 class Node:
     """
     Node class for dijkstra search
@@ -180,6 +187,82 @@ def dijkstra_planning(sx, sy, gx, gy, road_map, sample_x, sample_y):
             print("goal is found!")
             goal_node.parent_index = current.parent_index
             goal_node.cost = current.cost
+            print("Total Trip time required -> ",current.cost)
+            
+
+            A321_fc = 54
+            A330_fc = 84
+            A350_fc = 90
+            A321_pc = 200
+            A330_pc = 300
+            A350_pc = 350
+            A321_tc_low = 10
+            A330_tc_low = 15
+            A350_tc_low = 20
+            A321_tc_medium = 15
+            A330_tc_medium = 21
+            A350_tc_medium = 27
+            A321_tc_high = 20
+            A330_tc_high = 27
+            A350_tc_high = 34
+            A321_fix_c = 1800
+            A330_fix_c = 2000
+            A350_fix_c = 2500
+            A321_fn = math.ceil(pn/A321_pc)
+            A330_fn = math.ceil(pn/A330_pc)
+            A350_fn = math.ceil(pn/A350_pc)
+            if time_cost == "low":
+                if A321_fn > max_f:
+                    cost_A321 = "Not available"
+                else:
+                    cost_A321 = (A321_fc*goal_node.cost*fuel_cost + A321_tc_low*goal_node.cost + A321_fix_c)*A321_fn
+                if A330_fn > max_f:
+                    cost_A330 = "Not available"
+                else:
+                    cost_A330 = (A330_fc*goal_node.cost*fuel_cost + A330_tc_low*goal_node.cost + A330_fix_c)*A330_fn
+                if A350_fn > max_f:
+                    cost_A350 = "Not available"
+                else:
+                    cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_low*goal_node.cost + A350_fix_c)*A350_fn
+                print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
+                break
+
+            elif time_cost == "medium":
+                if A321_fn > max_f:
+                    cost_A321 = "Not available"
+                else:
+                    cost_A321 = (A321_fc*goal_node.cost*fuel_cost + A321_tc_medium*goal_node.cost + A321_fix_c)*A321_fn
+                if A330_fn > max_f:
+                    cost_A330 = "Not available"
+                else:
+                    cost_A330 = (A330_fc*goal_node.cost*fuel_cost + A330_tc_medium*goal_node.cost + A330_fix_c)*A330_fn
+                if A350_fn > max_f:
+                    cost_A350 = "Not available"
+                else:
+                    cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_medium*goal_node.cost + A350_fix_c)*A350_fn
+                print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
+                break
+
+            elif time_cost == "high":
+                if A321_fn > max_f:
+                    cost_A321 = "Not available"
+                else:
+                    cost_A321 = (A321_fc*goal_node.cost*fuel_cost + A321_tc_high*goal_node.cost + A321_fix_c)*A321_fn
+                if A330_fn > max_f:
+                    cost_A330 = "Not available"
+                else:
+                    cost_A330 = (A330_fc*goal_node.cost*fuel_cost + A330_tc_high*goal_node.cost + A330_fix_c)*A330_fn
+                if A350_fn > max_f:
+                    cost_A350 = "Not available"
+                else:
+                    cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_high*goal_node.cost + A350_fix_c)*A350_fn
+                print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
+                break
+        
+            else:
+                print("You should input 'low', 'medium', or 'high'in 'Time cost:")
+           
+
             break
 
         # Remove the item from the open set

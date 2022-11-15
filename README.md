@@ -83,11 +83,11 @@
 
 <!--ABOUT THE PROJECT-->
 ## Background of Path Planning in Aviation Engineering
- 
+The process of creating a flight plan to outline a potential aircraft flight is generally defined as path planning. Two safety-critical components are involved in this process which are the correct fuel calculations to ensure that the aircraft can land safely, and adherence to air traffic control regulations to reduce the chance of midair accidents. A flight planning system can save costs for any route by determining the fastest speed at any altitude and can also figure out the best altitude to use based on the forecasted weather. In aviation engineering, path planning is used to ensure that the most appropriate route for the flight is chosen and that that the flight crew doesn't face any unwanted midair crisis.
 
 
 ## Theory of Path Planning Algorithm
-  Path planning is one of the most critical research problems in robotics. By proposing path planning, many problems in various fields are solved. It has been applied to guide robots to achieve specific goals, from very simple trajectory planning to choosing an appropriate sequence of actions. By proposing suitable algorithms,path planning can be widely applied in partial and unknown structured environments.Local path planning generates paths by acquiring data from sensors during robot motion. Therefore, the robot can generate new paths based on the new environment. It makes this approach more applicable in practice.There are four essential predominant trade-off criteria that must be considered in a path planning algorithm: optimization, completeness, precision and execution time.
+  Path planning is one of the most critical research problems in robotics. By proposing path planning, many problems in various fields are solved. It has been applied to guide robots to achieve specific goals, from very simple trajectory planning to choosing an appropriate sequence of actions. By proposing suitable algorithms,path planning can be widely applied in partial and unknown structured environments.Local path planning generates paths by acquiring data from sensors during robot motion. Therefore, the robot can generate new paths based on the new environment. It makes this approach more applicable in practice.There are four essential predominant trade-off criteria that must be considered in a path planning algorithm which are optimization, completeness, precision and execution time respectively.
  
   
 ## Introduction of the Engineering Tools

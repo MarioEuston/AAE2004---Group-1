@@ -15,9 +15,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 show_animation = True
-pn = int(input("passenger number:"))
-max_f = int(input("maximum flight(per weeks):"))
-time_cost = str(input("Time cost (Please enter 'low', 'medium', or 'high'):"))
+pn = int(input("passenger number (per week):"))
+max_f = int(input("maximum flight:"))
+time_cost = str(input("Time cost ('high', 'medium' or 'low'):"))
 fuel_cost = eval(input("Fuel cost($/kg):"))
 A321_fc = 54
 A330_fc = 84
@@ -133,7 +133,7 @@ class AStarPlanner:
 
             # reaching goal
             if current1.x == goal_node.x and current1.y == goal_node.y:
-                print("---------------------------------------------------")
+                print("First Trip time required -> ",current1.cost )
                 cost = current1.cost
                 goal_node.parent_index = current1.parent_index
                 goal_node.cost = current1.cost
@@ -290,7 +290,7 @@ class AStarPlanner:
 
             # reaching goal
             if current.x == goal_node.x and current.y == goal_node.y:
-                print("---------------------------------------------------")
+                print("Second Trip time required -> ",current.cost )
                 cost = cost + current.cost
                 goal_node.parent_index = current.parent_index
                 goal_node.cost = current.cost
@@ -446,7 +446,7 @@ class AStarPlanner:
 
             # reaching goal
             if current3.x == goal_node.x and current3.y == goal_node.y:
-                print("---------------------------------------------------")
+                print("Third Trip time required -> ",current3.cost )
                 cost = cost + current3.cost
                 goal_node.parent_index = current3.parent_index
                 goal_node.cost = current3.cost
@@ -742,11 +742,14 @@ def main():
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
 
+    mng = plt.get_current_fig_manager()
+    mng.full_screen_toggle()
+
+
     a_star = AStarPlanner(ox, oy, grid_size, robot_radius, fc_x, fc_y, tc_x, tc_y, jc_x, jc_y)
     rx1, ry1 = a_star.planning(sx, sy, gx, gy)
     rx2, ry2 = a_star.planning(gx, gy, gx2, gy2)
     rx3, ry3 = a_star.planning(gx2, gy2, gx3, gy3)
-    print("---------------------------------------------------")
     print("Total Trip time required -> ",cost )
     if time_cost == "low":
         if A321_fn > max_f:
@@ -798,7 +801,7 @@ def main():
             
     else:
         print("You should input 'low', 'medium', or 'high'in 'Time cost:")
-    print("---------------------------------------------------")
+
     if show_animation:  # pragma: no cover
         plt.plot(rx1, ry1, "-r") # show the route 
         plt.plot(rx2, ry2, "-r")
@@ -806,8 +809,7 @@ def main():
         plt.pause(0.001) # pause 0.001 seconds
         plt.show() # show the plot
 
-    mng = plt.get_current_fig_manager()
-    mng.full_screen_toggle()
-        
+
+
 if __name__ == '__main__':
     main()

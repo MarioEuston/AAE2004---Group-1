@@ -1,19 +1,81 @@
 # AAE2004---Group-1
 
 
+
+![giphy](https://user-images.githubusercontent.com/116062601/201835486-2578785f-3668-4566-ba93-c60619b40ca4.gif)
+
+
 <!-- Table of Contents-->
 <details open="open">
   <summary><h2 style="display: inline_block">Table of Contents<h2></summary>
         <li><a href="#Background-of-Path-Planning-in-Aviation-Engineering">Background of Path Planning to Aviation Engineering</a></li>
         <li><a href="#Theory-of-Path-Planning-Algorithm">Theory of Path Planning Algorithm</a></li>
-        <li><a href="#Introduction-of-the-Engineering-Tools">Introduction to Engineering Tools</a></li>
-        <li><a href="#task-1--methodology-results-and-discusssion">Task 1 : Methodology Results and Discussion</a></li>
-        <li><a href="#task-2--methodology-results-and-discussion">Task 2 : Methodology Results and Discussion</a></li>
-        <li><a href="#task-3--methodology-results-and-discussion">Task 3 : Methodology Results and Discussion</a></li>
-        <li><a href="#additional-task-1-methodology-results-and-discussion">Additional Task 1 : Methodology Results and Discussion</a></li>
-        <li><a href="#additional-task-2-methodology-results-and-discussion">Additional Task 2 : Methodology Results and Discussion</a></li>
-        <li><a href="#additional-task-3-methodology-results-and-discussion">Additional Task 3 : Methodology Results and Discussion</a></li>
-        <li><a href="#reflective-essays">Reflective Essay</a></li>
+        <li>
+          <a href="#Introduction-of-the-Engineering-Tools">Introduction to Engineering Tools</a>
+             <ol type="a">
+                 <li><a href="#python">Python</a></li>
+                 <li><a href="#github">Github</a></li>
+              </ol>
+          </li>
+           <li>
+              <a href="#task-1--methodology-results-and-discusssion">Task 1 : Methodology Results and Discussion</a>
+               <ol type="a">
+                 <li><a href="#methodology">Methodology</a></li>
+                 <li><a href="#results">Results</a></li>
+                <li><a href="#discussion">Discussion</a></li>
+              </ol>
+          </li>
+        <li>
+          <a href="#task-2--methodology-results-and-discussion">Task 2 : Methodology Results and Discussion</a>
+             <ol type="a">
+                 <li><a href="#methodology">Methodology</a></li>
+                 <li><a href="#results">Results</a></li>
+                <li><a href="#discussion">Discussion</a></li>
+              </ol>
+          </li>
+        <li>
+          <a href="#task-3--methodology-results-and-discussion">Task 3 : Methodology Results and Discussion</a>
+           <ol type="a">
+                 <li><a href="#methodology">Methodology</a></li>
+                 <li><a href="#results">Results</a></li>
+                <li><a href="#discussion">Discussion</a></li>
+              </ol>
+          </li>
+        <li>
+          <a href="#additional-task-1-methodology-results-and-discussion">Additional Task 1 : Methodology Results and Discussion</a>
+           <ol type="a">
+                 <li><a href="#methodology">Methodology</a></li>
+                 <li><a href="#results">Results</a></li>
+                <li><a href="#discussion">Discussion</a></li>
+              </ol>
+          </li>
+        <li><a href="#additional-task-2-methodology-results-and-discussion">Additional Task 2 : Methodology Results and Discussion</a>
+          <ol type="a">
+                 <li><a href="#methodology">Methodology</a></li>
+                 <li><a href="#results">Results</a></li>
+                <li><a href="#discussion">Discussion</a></li>
+              </ol>
+          </li>
+        <li>
+          <a href="#additional-task-3-methodology-results-and-discussion">Additional Task 3 : Methodology Results and Discussion</a>
+          <ol type="a">
+                 <li><a href="#methodology">Methodology</a></li>
+                 <li><a href="#results">Results</a></li>
+                <li><a href="#discussion">Discussion</a></li>
+              </ol>
+          </li>
+        <li>
+          <a href="#reflective-essays">Reflective Essay</a>
+           <ol type="a">
+                 <li><a href="#aishy-prithula-prashun">AISHY Prithula Prashun</a></li>
+                 <li><a href="#au-cheuk-hei">AU Cheuk Hei</a></li>
+                 <li><a href="#cai-jialiang">CAI Jialiang</a></li>
+                 <li><a href="#chan-cheuk-hin">CHAN Cheuk Hin</a></li>
+                 <li><a href="#chan-ho-chun">CHAN Ho Chun</a></li>
+                 <li><a href="#chan-kuen-fai">CHAN Kuen Fai</a></li>
+                 <li><a href="#chan-pak-lam">CHAN Pak Lam</a></li>
+              </ol>
+          </li>
         <li><a href="#referances">Referances</a></li>
    </ol> 
 </details>
@@ -21,11 +83,11 @@
 
 <!--ABOUT THE PROJECT-->
 ## Background of Path Planning in Aviation Engineering
- 
+The process of creating a flight plan to outline a potential aircraft flight is generally defined as path planning. Two safety-critical components are involved in this process which are the correct fuel calculations to ensure that the aircraft can land safely, and adherence to air traffic control regulations to reduce the chance of midair accidents. A flight planning system can save costs for any route by determining the fastest speed at any altitude and can also figure out the best altitude to use based on the forecasted weather. In aviation engineering, path planning is used to ensure that the most appropriate route for the flight is chosen and that that the flight crew doesn't face any unwanted midair crisis.
 
 
 ## Theory of Path Planning Algorithm
-  Path planning is one of the most critical research problems in robotics. By proposing path planning, many problems in various fields are solved. It has been applied to guide robots to achieve specific goals, from very simple trajectory planning to choosing an appropriate sequence of actions. By proposing suitable algorithms,path planning can be widely applied in partial and unknown structured environments.Local path planning generates paths by acquiring data from sensors during robot motion. Therefore, the robot can generate new paths based on the new environment. It makes this approach more applicable in practice.There are four essential predominant trade-off criteria that must be considered in a path planning algorithm: optimization, completeness, precision and execution time.
+  Path planning is one of the most critical research problems in robotics. By proposing path planning, many problems in various fields are solved. It has been applied to guide robots to achieve specific goals, from very simple trajectory planning to choosing an appropriate sequence of actions. By proposing suitable algorithms,path planning can be widely applied in partial and unknown structured environments.Local path planning generates paths by acquiring data from sensors during robot motion. Therefore, the robot can generate new paths based on the new environment. It makes this approach more applicable in practice.There are four essential predominant trade-off criteria that must be considered in a path planning algorithm which are optimization, completeness, precision and execution time respectively.
  
   
 ## Introduction of the Engineering Tools
@@ -69,8 +131,11 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
   
 ## Additional Task 1: Methodology Results and Discussion
 ### Methodology
+   We divide the whole journey into three routes (start point to end point). First, we set the start point at where the plane located. We set the first checkpoint (the    nearer one) as the end point simultaneously. When the plane arrives to the first checkpoint, we change that checkpoint as the start point. Then the remaining          checkpoint as the end point. Same logic, when the plane arrives to the second checkpoint, it becomes the start point and the destination become end point. 
 ### Results
+  The cost is added due to the plane fly through two cost intensive areas. 
 ### Discussion
+  In this task, we calculate the total distance of the flight. We set three variables for the distance between checkpoint and checkpoint. Then we sum the variables up,   the total flight distance can be found. We can use it for calculating the flight cost and different data of the plane. After compare the distance of with checkpoint   and without checkpoint, we find that the main factor affecting the flight time and cost are total trip time. In our scenario, the flight time with checkpoint is       around 159% more than without checkpoint. To conclude, if checkpoint is added, the flight time most likely be increased. Unless the checkpoint lies on the shortest     flight route, then the flight time will remain the same. Thus, the time and cost will be increases.
   
   
 ## Additional Task 2: Methodology Results and Discussion
@@ -87,6 +152,13 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
 ### Discussion
   
 ## Reflective Essays
+### AISHY Prithula Prashun
+### AU Cheuk Hei
+### CAI Jialiang
+### CHAN Cheuk Hin
+### CHAN Ho Chun
+### CHAN Kuen Fai
+### CHAN Pak Lam
   
 ## Referances
   

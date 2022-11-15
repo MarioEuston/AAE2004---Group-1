@@ -316,5 +316,6 @@ def main(rng=None):
     mng = plt.get_current_fig_manager()
     mng.full_screen_toggle()
 
+
 if __name__ == '__main__':
     main()

@@ -6,13 +6,60 @@
   <summary><h2 style="display: inline_block">Table of Contents<h2></summary>
         <li><a href="#Background-of-Path-Planning-in-Aviation-Engineering">Background of Path Planning to Aviation Engineering</a></li>
         <li><a href="#Theory-of-Path-Planning-Algorithm">Theory of Path Planning Algorithm</a></li>
-        <li><a href="#Introduction-of-the-Engineering-Tools">Introduction to Engineering Tools</a></li>
-        <li><a href="#task-1--methodology-results-and-discusssion">Task 1 : Methodology Results and Discussion</a></li>
-        <li><a href="#task-2--methodology-results-and-discussion">Task 2 : Methodology Results and Discussion</a></li>
-        <li><a href="#task-3--methodology-results-and-discussion">Task 3 : Methodology Results and Discussion</a></li>
-        <li><a href="#additional-task-1-methodology-results-and-discussion">Additional Task 1 : Methodology Results and Discussion</a></li>
-        <li><a href="#additional-task-2-methodology-results-and-discussion">Additional Task 2 : Methodology Results and Discussion</a></li>
-        <li><a href="#additional-task-3-methodology-results-and-discussion">Additional Task 3 : Methodology Results and Discussion</a></li>
+        <li>
+          <a href="#Introduction-of-the-Engineering-Tools">Introduction to Engineering Tools</a>
+             <ol type="a">
+                 <li><a href="#python">Python</a></li>
+                 <li><a href="#github">Github</a></li>
+              </ol>
+          </li>
+           <li>
+              <a href="#task-1--methodology-results-and-discusssion">Task 1 : Methodology Results and Discussion</a>
+               <ol type="a">
+                 <li><a href="#methodology">Methodology</a></li>
+                 <li><a href="#results">Results</a></li>
+                <li><a href="#discussion">Discussion</a></li>
+              </ol>
+          </li>
+        <li>
+          <a href="#task-2--methodology-results-and-discussion">Task 2 : Methodology Results and Discussion</a>
+             <ol type="a">
+                 <li><a href="#methodology">Methodology</a></li>
+                 <li><a href="#results">Results</a></li>
+                <li><a href="#discussion">Discussion</a></li>
+              </ol>
+          </li>
+        <li>
+          <a href="#task-3--methodology-results-and-discussion">Task 3 : Methodology Results and Discussion</a>
+           <ol type="a">
+                 <li><a href="#methodology">Methodology</a></li>
+                 <li><a href="#results">Results</a></li>
+                <li><a href="#discussion">Discussion</a></li>
+              </ol>
+          </li>
+        <li>
+          <a href="#additional-task-1-methodology-results-and-discussion">Additional Task 1 : Methodology Results and Discussion</a>
+           <ol type="a">
+                 <li><a href="#methodology">Methodology</a></li>
+                 <li><a href="#results">Results</a></li>
+                <li><a href="#discussion">Discussion</a></li>
+              </ol>
+          </li>
+        <li><a href="#additional-task-2-methodology-results-and-discussion">Additional Task 2 : Methodology Results and Discussion</a>
+          <ol type="a">
+                 <li><a href="#methodology">Methodology</a></li>
+                 <li><a href="#results">Results</a></li>
+                <li><a href="#discussion">Discussion</a></li>
+              </ol>
+          </li>
+        <li>
+          <a href="#additional-task-3-methodology-results-and-discussion">Additional Task 3 : Methodology Results and Discussion</a>
+          <ol type="a">
+                 <li><a href="#methodology">Methodology</a></li>
+                 <li><a href="#results">Results</a></li>
+                <li><a href="#discussion">Discussion</a></li>
+              </ol>
+          </li>
         <li><a href="#reflective-essays">Reflective Essay</a></li>
         <li><a href="#referances">Referances</a></li>
    </ol> 

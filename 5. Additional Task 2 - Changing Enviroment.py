@@ -381,6 +381,9 @@ def main():
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
 
+    mng = plt.get_current_fig_manager()
+    mng.full_screen_toggle()
+
     a_star = AStarPlanner(ox, oy, grid_size, robot_radius, tc_x, tc_y)
     rx1, ry1 = a_star.planning(sx, sy, gx, gy)
 
@@ -389,8 +392,7 @@ def main():
         plt.pause(0.001) # pause 0.001 seconds
         plt.show() # show the plot
 
-    mng = plt.get_current_fig_manager()
-    mng.full_screen_toggle()
+
 
 
 if __name__ == '__main__':

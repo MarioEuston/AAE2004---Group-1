@@ -304,6 +304,9 @@ def main(rng=None):
         plt.grid(True)
         plt.axis("equal")
 
+    mng = plt.get_current_fig_manager()
+    mng.full_screen_toggle()
+
     rx, ry = prm_planning(sx, sy, gx, gy, ox, oy, robot_size, rng=rng)
 
     assert rx, 'Cannot found path'
@@ -312,9 +315,6 @@ def main(rng=None):
         plt.plot(rx, ry, "-r")
         plt.pause(0.001)
         plt.show()
-
-    mng = plt.get_current_fig_manager()
-    mng.full_screen_toggle()
 
 
 if __name__ == '__main__':

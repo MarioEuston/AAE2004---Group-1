@@ -60,7 +60,18 @@
                 <li><a href="#discussion">Discussion</a></li>
               </ol>
           </li>
-        <li><a href="#reflective-essays">Reflective Essay</a></li>
+        <li>
+          <a href="#reflective-essays">Reflective Essay</a>
+           <ol type="a">
+                 <li><a href="#aishy-prithula-prashun">AISHY Prithula Prashun</a></li>
+                 <li><a href="#au-cheuk-hei">AU Cheuk Hei</a></li>
+                 <li><a href="#cai-jialiang">CAI Jialiang</a></li>
+                 <li><a href="#chan-cheuk-hin">CHAN Cheuk Hin</a></li>
+                 <li><a href="#chan-ho-chun">CHAN Ho Chun</a></li>
+                 <li><a href="#chan-kuen-fai">CHAN Kuen Fai</a></li>
+                 <li><a href="#chan-pak-lam">CHAN Pak Lam</a></li>
+              </ol>
+          </li>
         <li><a href="#referances">Referances</a></li>
    </ol> 
 </details>
@@ -116,8 +127,11 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
   
 ## Additional Task 1: Methodology Results and Discussion
 ### Methodology
+   We divide the whole journey into three routes (start point to end point). First, we set the start point at where the plane located. We set the first checkpoint (the    nearer one) as the end point simultaneously. When the plane arrives to the first checkpoint, we change that checkpoint as the start point. Then the remaining          checkpoint as the end point. Same logic, when the plane arrives to the second checkpoint, it becomes the start point and the destination become end point. 
 ### Results
+  The cost is added due to the plane fly through two cost intensive areas. 
 ### Discussion
+  In this task, we calculate the total distance of the flight. We set three variables for the distance between checkpoint and checkpoint. Then we sum the variables up,   the total flight distance can be found. We can use it for calculating the flight cost and different data of the plane. After compare the distance of with checkpoint   and without checkpoint, we find that the main factor affecting the flight time and cost are total trip time. In our scenario, the flight time with checkpoint is       around 159% more than without checkpoint. To conclude, if checkpoint is added, the flight time most likely be increased. Unless the checkpoint lies on the shortest     flight route, then the flight time will remain the same. Thus, the time and cost will be increases.
   
   
 ## Additional Task 2: Methodology Results and Discussion

@@ -255,6 +255,9 @@ def main():
         plt.plot(gx, gy, "xb")
         plt.grid(True)
         plt.axis("equal")
+        
+    mng = plt.get_current_fig_manager()
+    mng.full_screen_toggle()
 
     dijkstra = Dijkstra(ox, oy, grid_size, robot_radius)
     rx, ry = dijkstra.planning(sx, sy, gx, gy)

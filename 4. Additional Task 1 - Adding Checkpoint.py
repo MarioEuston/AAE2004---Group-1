@@ -806,6 +806,8 @@ def main():
         plt.pause(0.001) # pause 0.001 seconds
         plt.show() # show the plot
 
-
+    mng = plt.get_current_fig_manager()
+    mng.full_screen_toggle()
+        
 if __name__ == '__main__':
     main()

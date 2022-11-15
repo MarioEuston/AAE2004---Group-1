@@ -358,12 +358,13 @@ def main():
         ox.append(-10.0)
         oy.append(i)
     k = 1
-    while k<2000:
+    while k<20000:
         m = np.random.randint(-9,60)
         n = np.random.randint(-9,60)
-        if m != sx and m != sx+1 and m != sx-1 and m != gx and m != gx+1 and m != gx-1 or n != sy and n != sy+1 and n != sy-1 and n != gy and n != gy+1 and n != gy-1:
-            ox.append(m)
-            oy.append(n)
+        if m != sx and m != sx+1 and m != sx-1 or n !=sy and n != sy+1 and n != sy-1:
+            if m != gx and m != gx+1 and m != gx-1 or n !=gy and n != gy+1 and n != gy-1:
+                ox.append(m)
+                oy.append(n)
         k=k+1
         
     # set cost intesive area 1
@@ -376,13 +377,16 @@ def main():
             tc_y.append(j)
 
 
-    if show_animation:  # pragma: no cover      
-        plt.plot(tc_x, tc_y, "oy") # plot the cost intensive area 2
+    if show_animation:  # pragma: no cover  
+        plt.plot(tc_x, tc_y, "oy") # plot the cost intensive area 1
         plt.plot(ox, oy, ".k") # plot the obstacle  
         plt.plot(sx, sy, "og") # plot the start position 
         plt.plot(gx, gy, "og") # plot the checkpoint1 position
         plt.grid(True) # plot the grid to the plot panel
         plt.axis("equal") # set the same resolution for x and y axis 
+        
+    mng = plt.get_current_fig_manager()
+    mng.full_screen_toggle()
 
     a_star = AStarPlanner(ox, oy, grid_size, robot_radius, tc_x, tc_y)
     rx1, ry1 = a_star.planning(sx, sy, gx, gy)

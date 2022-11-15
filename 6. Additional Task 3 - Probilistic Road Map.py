@@ -313,6 +313,8 @@ def main(rng=None):
         plt.pause(0.001)
         plt.show()
 
+    mng = plt.get_current_fig_manager()
+    mng.full_screen_toggle()
 
 if __name__ == '__main__':
     main()

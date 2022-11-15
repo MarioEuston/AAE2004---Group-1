@@ -134,7 +134,6 @@ class Dijkstra:
                     else:
                         cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_low*goal_node.cost + A350_fix_c)*A350_fn
                     print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
-                    break
 
                 elif time_cost == "medium":
                     if A321_fn > max_f:
@@ -150,7 +149,6 @@ class Dijkstra:
                     else:
                         cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_medium*goal_node.cost + A350_fix_c)*A350_fn
                     print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
-                    break
 
                 elif time_cost == "high":
                     if A321_fn > max_f:
@@ -166,7 +164,6 @@ class Dijkstra:
                     else:
                         cost_A350 = (A350_fc*goal_node.cost*fuel_cost + A350_tc_high*goal_node.cost + A350_fix_c)*A350_fn
                     print("A321:{}$\nA330:{}$\nA350:{}$".format(cost_A321,cost_A330,cost_A350))
-                    break
            
                 else:
                     print("You should input 'low', 'medium', or 'high'in 'Time cost:")

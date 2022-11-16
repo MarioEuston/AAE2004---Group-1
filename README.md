@@ -88,12 +88,13 @@ Finding a geometric route that avoids obstacles and establishes a most suitable 
 
 ## Theory of Path Planning Algorithm
   Path planning is one of the most critical research problems in robotics. By proposing path planning, many problems in various fields are solved. It has been applied to guide robots to achieve specific goals, from very simple trajectory planning to choosing an appropriate sequence of actions. By proposing suitable algorithms,path planning can be widely applied in partial and unknown structured environments.Local path planning generates paths by acquiring data from sensors during robot motion. Therefore, the robot can generate new paths based on the new environment. It makes this approach more applicable in practice.There are four essential predominant trade-off criteria that must be considered in a path planning algorithm which are optimization, completeness, precision and execution time respectively.
- 
+
   
 ## Introduction of the Engineering Tools
 
 
-![download](https://user-images.githubusercontent.com/116062601/200479345-c0bce238-ef5b-4c24-87c1-0686317624c2.jpeg)
+![1200px-Python svg](https://user-images.githubusercontent.com/116062601/202211432-35ad5c38-1219-4b67-951c-677eb769b2de.png)
+ 
 
 ### Python
   Python is an object-oriented, interpreted, high-level, dynamically semantic programming language. It is particularly desirable for Rapid Application Development as well as for usage as a scripting or glue language to tie existing components together due to its dynamic binding, dynamic typing, and high-level built-in data structures. Python's straightforward syntax prioritizes readability and makes it simple to learn, which lowers the cost of program maintenance. Python's support for modules and packages promotes the modularity and reuse of code in programs. For all popular platforms, the Python interpreter and the comprehensive standard library are freely distributable and available in source or binary form.
@@ -172,9 +173,17 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
   
   
 ## Additional Task 3: Methodology Results and Discussion
+
 ### Methodology
   
 ### Results
+  ![AT3 - Dijkstr](https://user-images.githubusercontent.com/116062601/202213338-cfda49fb-b38f-45a0-badc-e5d5d5a15555.gif)
+  
+  
+  
+  
+  ![AT3 - PRM(2)](https://user-images.githubusercontent.com/116062601/202213492-e850ad43-67ac-4123-af97-41f809fb9a41.gif)
+
 ### Discussion
   
 ## Reflective Essays

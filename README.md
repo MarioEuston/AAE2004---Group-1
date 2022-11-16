@@ -168,6 +168,7 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
   
 ## Reflective Essays
 ### AISHY Prithula Prashun
+  The concept of programming is a relatively new concept to me as I am still an amateur programmer but this project has helped me develop a clearer view of coding and learn new concepts and methodologies. We have learnt about path planning and this journey has been really engaging and enjoyable. GitHub was a new experience for all of us in our group. But we co-operated, helped each other and learnt how to navigate through GitHub. And as GitHub is an open-source coding platform, we were able to take a look at and learn from projects done by other expert programmers and use that knowledge to develop our project. This project has also taught us how to collaborate on a global programming platform, think outside the box, challenge ourselves by going out of our comfort zone and expose ourselves to new and foreign concepts with an open mind. We hope that going forward, we will be able to maintain this outlook and utilize the skills that this project has help us build.
 ### AU Cheuk Hei
 ### CAI Jialiang
 ### CHAN Cheuk Hin

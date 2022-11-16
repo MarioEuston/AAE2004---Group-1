@@ -144,6 +144,11 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
    We divide the whole journey into three routes (start point to end point). First, we set the start point at where the plane located. We set the first checkpoint (the    nearer one) as the end point simultaneously. When the plane arrives to the first checkpoint, we change that checkpoint as the start point. Then the remaining          checkpoint as the end point. Same logic, when the plane arrives to the second checkpoint, it becomes the start point and the destination become end point. 
 ### Results
   The cost is added due to the plane fly through two cost intensive areas. 
+  
+  
+  
+  ![AT1](https://user-images.githubusercontent.com/116062601/202198841-e44280ad-6519-4b3d-ada1-bc8b55025e9a.gif)
+
 ### Discussion
   In this task, we calculate the total distance of the flight. We set three variables for the distance between checkpoint and checkpoint. Then we sum the variables up,   the total flight distance can be found. We can use it for calculating the flight cost and different data of the plane. After compare the distance of with checkpoint   and without checkpoint, we find that the main factor affecting the flight time and cost are total trip time. In our scenario, the flight time with checkpoint is       around 159% more than without checkpoint. To conclude, if checkpoint is added, the flight time most likely be increased. Unless the checkpoint lies on the shortest     flight route, then the flight time will remain the same. Thus, the time and cost will be increases.
   

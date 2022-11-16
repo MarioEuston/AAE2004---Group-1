@@ -136,6 +136,12 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
 ## Task 3 : Methodology Results and Discussion
 ### Methodology
 ### Results
+  
+  
+  
+  ![Task 3](https://user-images.githubusercontent.com/116062601/202209717-84ec020a-9ed7-47d7-b0f7-3294360a2c98.gif)
+
+  
 ### Discussion
   
   
@@ -156,6 +162,11 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
 ## Additional Task 2: Methodology Results and Discussion
 ### Methodology
 ### Results
+  
+  
+  ![AT2](https://user-images.githubusercontent.com/116062601/202209991-5ebe863a-2300-47b4-9d83-860f94f4bb4c.gif)
+
+  
 ### Discussion
 
   

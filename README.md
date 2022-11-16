@@ -159,6 +159,7 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
 ### CHAN Ho Chun
 ### CHAN Kuen Fai
 ### CHAN Pak Lam
+  Thoughout this experience working in both github and python coding about path planning, I have gained much experience on how to make code and gain more knowledge on python coding. Making use of the microsoft code to make our own path planning code and visualise the results is extreme extraodinary and thrilling. 
   
 ## Referances
   

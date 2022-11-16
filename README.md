@@ -113,7 +113,8 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
   The most suitable aircrafts for the first,second and third scenario are A330, A350 and A330 respectively.
   
   
-  
+  ![Task 1 - S2](https://user-images.githubusercontent.com/116062601/202095748-b298c1a3-aa85-4e87-bab3-bec975108a68.gif)
+
   
 ### Discussion
   The first task was to find out an appropriate aircraft model that achieve minimum cost for the challenge assigned.The first scenario is to consider 3000 passengers travelling within one week when the maximum number of flights that we can afford is 12 per one week. The time cost should be medium and the fuel cost should be 0.76$/kg. Considering this scenario the most appropriate aircraft is A330-900neo.In this case, A321 can't meet the requirements. And the cost of aircraft A350 is much more than A330. The second scenario is where 1250 passengers travel within this month and we can afford 5 flights per week which makes it 20 flights per month.In this scenario the most profitable aircraft model is A350-900. And the third scenario is where 2500 passengers need to travel within this week and only 25 flights can be afforded within this week.Considering the circumstamces of this particular scenario the best aircraft model is A330-900neo because it is the most cost effective. 
@@ -124,7 +125,12 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
   For the second task, we needed to design another cost effective area which can reduce the cost of the route.First, we created an area similiar to the cost intensive area but change the values to negetive in order to reduce the cost. Then we designed the jet stream area in the location where the aircraft makes three turns.
 ### Results
   It is seen that the cost was reduced because of the planning of the jet stream area compared to that of Task 1.
+  
+ ![Task 2](https://user-images.githubusercontent.com/116062601/202096447-cb860a19-85da-46b5-998a-45de78db0f57.gif) 
+  
+  
 ### Discussion
+
   For the first scenario of 3000 passengers travelling within one week when 12 flights are available per week, A330 was the most suitable aircraft before the jet stream area was introduced with the cost of 91816$. But when the jet stream area was introduced, the cost reduced to 91544$. For the second scenario, the most suitable flight was A350 with the cost of 48329$ which was reduced to 48183$ with the introduction of the jet stream area. Similiarly it is seen that for the third scenario the most appropriate and cost effective aircraft to choose was A330 which had cost lower than the other two models. But the addition of the jet stream area further reduced it's cost from 90222$ to 89948$.
   
 ## Task 3 : Methodology Results and Discussion

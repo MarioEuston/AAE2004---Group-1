@@ -111,6 +111,10 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
   For the first task, for three different scenarios, we mneed to find the most cost effective aircraft.For solving this task, first we changed the codes of the borders of the cost intensive areas to match them with our scenarios. Then we changed the range to numpy arange to make the border such as the aircraft can pass through it. Then we added the conditions of the three scenarios provided and that of the aircrafts in our code. Then we added a calculating system in our code so that it can calculate how much cost each aircraft would have by analyzing all the data we provided.
 ### Result
   The most suitable aircrafts for the first,second and third scenario are A330, A350 and A330 respectively.
+  
+  
+  
+  
 ### Discussion
   The first task was to find out an appropriate aircraft model that achieve minimum cost for the challenge assigned.The first scenario is to consider 3000 passengers travelling within one week when the maximum number of flights that we can afford is 12 per one week. The time cost should be medium and the fuel cost should be 0.76$/kg. Considering this scenario the most appropriate aircraft is A330-900neo.In this case, A321 can't meet the requirements. And the cost of aircraft A350 is much more than A330. The second scenario is where 1250 passengers travel within this month and we can afford 5 flights per week which makes it 20 flights per month.In this scenario the most profitable aircraft model is A350-900. And the third scenario is where 2500 passengers need to travel within this week and only 25 flights can be afforded within this week.Considering the circumstamces of this particular scenario the best aircraft model is A330-900neo because it is the most cost effective. 
 

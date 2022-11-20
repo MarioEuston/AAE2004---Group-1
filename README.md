@@ -203,7 +203,11 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
   
 ## References
 [1]https://www.mathworks.com/discovery/path-planning.html
+  
 [2]https://en.wikipedia.org/wiki/Flight_planning
+  
 [3]A. Montazeri, A. Can, and I. H. Imran, “Unmanned aerial systems: Autonomy, cognition, and Control,” Unmanned Aerial Systems, pp. 47–80, 2021. 
+  
 [4]https://www.python.org/doc/essays/blurb/
+  
 [5]https://codeinstitute.net/global/blog/github-might-benefit-using/

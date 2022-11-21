@@ -136,7 +136,7 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
   
 ## Task 3 : Methodology Results and Discussion
 ### Methodology
-In this task, we designed two aircrafts, the first one is a big aircraft carrying four engines with passenger capcitiy (450>= number of passengers >300 passengers). The other one is smaller aircraft carrying twin engines and lower passenger capcitiy (<= 299 passengers). For convenience, we are using A1 to represent the big aircraft and A2 to represent the smaller aircraft. In fact, these two aircrafts are the both possible best option for the flight, so we were using python coding to compare the differences of the data between them.
+In this task, we designed two aircrafts, the first one is a big aircraft carrying four engines with passenger capacitiy (450>= number of passengers >300 passengers). The other one is smaller aircraft carrying twin engines and lower passenger capacitiy (<= 299 passengers). For convenience, we are using A1 to represent the big aircraft and A2 to represent the smaller aircraft. In fact, these two aircrafts are the both possible best option for the flight, so we were using python coding to compare the differences of the data between them.
 
 ### Results
 After the coding processing, the result shows A1 is the best aircraft option. 

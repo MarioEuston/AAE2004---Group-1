@@ -136,7 +136,10 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
   
 ## Task 3 : Methodology Results and Discussion
 ### Methodology
+In this task, we designed two aircrafts, the first one is a big aircraft carrying four engines with passenger capcitiy (450>= number of passengers >300 passengers). The other one is smaller aircraft carrying twin engines and lower passenger capcitiy (<= 299 passengers). For convenience, we are using A1 to represent the big aircraft and A2 to represent the smaller aircraft. In fact, these two aircrafts are the both possible best option for the flight, so we were using python coding to compare the differences of the data between them.
+
 ### Results
+After the coding processing, the result shows A1 is the best aircraft option. 
   
   
   
@@ -144,6 +147,8 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
 
   
 ### Discussion
+In our coding process, we can get the fuel cost of A1 is 80, the fuel cost of A2 is 40. So the fuel cost of big aircraft is higher than the smaller aircraft. The passenger capacity of A1 is 450, A2 is 299. Hence the passenger capacity of big aircraft is more than small aircraft 151 . The time cost medium of A1 is 24, A2 is 30. The time cost medium of smaller aircraft is more than the big aircraft that means smaller aircrafts need more time for the operation. The fix cost of A1 is 2000, A2 is 2500. The fix cost of small aircraft is higher than the big aircraft. Under calculated the cost of both big and small aircraft by using the formula trip cost equation, we can get the result is using big aircraft is the best choice. 
+
   
   
 ## Additional Task 1: Methodology Results and Discussion

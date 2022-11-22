@@ -168,7 +168,11 @@ In our coding process, we can get the fuel cost of A1 is 80, the fuel cost of A2
   
 ## Additional Task 2: Methodology Results and Discussion
 ### Methodology
+To commence with, a random function is used in the domain between x=-10 to x =30,y=-10 to y=30, so that only the fuel-consuming area remains and generated randomly with a fixed area.	The Diagonal movement is disabled by deleting the diagonal square root function. Through reducing the radius from 1 to 0.5 , the object could travel within one grid size. Since the path fails to present when the density is higher than 2400, 2000 is a suitable range of density. By setting up a function to calculate their distance, once it is detected lower than 50, reset the random function. Destination and starting points could be generated randomly with at least a 50- unit distance in-between. Also, print the cost intensive area before printing the obstacle, so that it will not be covered. Lastly, through blocking the coordinates of starting point and goal point by +1 and -1 respectively, obstacles would not be generated near the start and end point.
+
 ### Results
+The density of obstacles is inversely proportional to the rate of success of the flight planning.
+
   
   
   ![AT2](https://user-images.githubusercontent.com/116062601/202209991-5ebe863a-2300-47b4-9d83-860f94f4bb4c.gif)
@@ -178,6 +182,7 @@ In our coding process, we can get the fuel cost of A1 is 80, the fuel cost of A2
 
   
 ### Discussion
+As the obstacle becomes more dense in a certain area, it makes the route planning more difficult, furthermore the flight will be more difficult to process. We set up an experiment by changing the density of the obstacles as major variable , while to find out the rate of success in the planning of another, in order to see if there is any kind of relation between the density and the flight successful rate. During the experiment, we operate the flight planning in a certain times with different density of obstacles. It has been found out that there are 100% success when the number of obstacles is lower than 2000; when the number of obstacles reach 2500 , there are only 5 success in total of 10 trials ; the success rate drop to zero when there are over 3000 number of obstacles. Hence, lower the density of obstacle can enhance the success of the flight planning.
 
   
   

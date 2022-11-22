@@ -118,7 +118,7 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
   ![Task 1 - S1](Gif%20and%20Data/GIF/Task%201%20-%20S1.gif)
 
   Output for scenario 1:
-  
+
   ![Data for scenario 1](Gif%20and%20Data/GIF/Task%201%20-%20S1.png)
 
   Task 1 - Scenario 2:
@@ -147,9 +147,14 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
 ### Results
   It is seen that the cost was reduced because of the planning of the jet stream area compared to that of Task 1.
   
+Task 2
+
  ![Task 2](https://user-images.githubusercontent.com/116062601/202096447-cb860a19-85da-46b5-998a-45de78db0f57.gif) 
   
-  
+  Output
+
+![Task 2](Gif%20and%20Data/GIF/Task%202.png)
+
 ### Discussion
 
   For the first scenario of 3000 passengers travelling within one week when 12 flights are available per week, A330 was the most suitable aircraft before the jet stream area was introduced with the cost of 91816$. But when the jet stream area was introduced, the cost reduced to 91544$. For the second scenario, the most suitable flight was A350 with the cost of 48329$ which was reduced to 48183$ with the introduction of the jet stream area. Similiarly it is seen that for the third scenario the most appropriate and cost effective aircraft to choose was A330 which had cost lower than the other two models. But the addition of the jet stream area further reduced it's cost from 90222$ to 89948$.
@@ -158,15 +163,17 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
 ### Methodology
 In this task, we designed two aircrafts, the first one is a big aircraft carrying four engines with passenger capacity (450>= number of passengers >300 passengers). The other one is smaller aircraft carrying twin engines and lower passenger capacity (<= 299 passengers). For convenience, we are using A1 to represent the big aircraft and A2 to represent the smaller aircraft. In fact, these two aircrafts are the both possible best option for the flight, so we were using python coding to compare the differences of the data between them.
 
-
 ### Results
 After the coding processing, the result shows A1 is the best aircraft option. 
   
-  
+  Task 3
   
   ![Task 3](https://user-images.githubusercontent.com/116062601/202209717-84ec020a-9ed7-47d7-b0f7-3294360a2c98.gif)
 
-  
+  Output
+
+  ![Task 3](Gif%20and%20Data/GIF/Task%203.png)
+
 ### Discussion
 In our coding process, we can get the fuel cost of A1 is 80, the fuel cost of A2 is 40. So the fuel cost of big aircraft is higher than the smaller aircraft. The passenger capacity of A1 is 450, A2 is 299. Hence the passenger capacity of big aircraft is more than small aircraft 151 . The time cost medium of A1 is 24, A2 is 30. The time cost medium of smaller aircraft is more than the big aircraft that means smaller aircrafts need more time for the operation. The fix cost of A1 is 2000, A2 is 2500. The fix cost of small aircraft is higher than the big aircraft. Under calculated the cost of both big and small aircraft by using the formula trip cost equation, we can get the result is using big aircraft is the best choice. 
 
@@ -178,9 +185,14 @@ In our coding process, we can get the fuel cost of A1 is 80, the fuel cost of A2
 ### Results
   The cost is added due to the plane fly through two cost intensive areas. 
   
-  
+  Additional task 1
   
   ![AT1](https://user-images.githubusercontent.com/116062601/202198841-e44280ad-6519-4b3d-ada1-bc8b55025e9a.gif)
+
+  Output
+
+  ![AT1](Gif%20and%20Data/GIF/AT1.jpeg)
+
 
 ### Discussion
   In this task, we calculate the total distance of the flight. We set three variables for the distance between checkpoint and checkpoint. Then we sum the variables up,   the total flight distance can be found. We can use it for calculating the flight cost and different data of the plane. After compare the distance of with checkpoint   and without checkpoint, we find that the main factor affecting the flight time and cost are total trip time. In our scenario, the flight time with checkpoint is       around 159% more than without checkpoint. To conclude, if checkpoint is added, the flight time most likely be increased. Unless the checkpoint lies on the shortest     flight route, then the flight time will remain the same. Thus, the time and cost will be increases.
@@ -193,10 +205,13 @@ To commence with, a random function is used in the domain between x=-10 to x =30
 ### Results
 The density of obstacles is inversely proportional to the rate of success of the flight planning.
 
-  
+  Additional task 2
   
   ![AT2](https://user-images.githubusercontent.com/116062601/202209991-5ebe863a-2300-47b4-9d83-860f94f4bb4c.gif)
   
+  Output
+
+  ![AT2](Gif%20and%20Data/GIF/AT2.png)
   
 ![WhatsApp Image 2022-11-17 at 11 33 08](https://user-images.githubusercontent.com/116062601/202354986-11a24cef-e71a-42e7-b5f6-6b4cb841fbdf.jpg)
 
@@ -210,13 +225,23 @@ As the obstacle becomes more dense in a certain area, it makes the route plannin
 
 ### Methodology
   
-### Results
+### Results 
+
+  Additional task 3 - Dijkstra Algorithm
+
   ![AT3 - Dijkstr](https://user-images.githubusercontent.com/116062601/202213338-cfda49fb-b38f-45a0-badc-e5d5d5a15555.gif)
+
+  Output of Dijkstra
+
+  ![AT3 - Dijkstra](Gif%20and%20Data/GIF/AT3%20-%20Dijkstra.png)
+
+  Additional task 3 - Probabilistic Road-Map Algorithm
+
+  ![AT3 - PRM](https://user-images.githubusercontent.com/116062601/202213492-e850ad43-67ac-4123-af97-41f809fb9a41.gif)
   
-  
-  
-  
-  ![AT3 - PRM(2)](https://user-images.githubusercontent.com/116062601/202213492-e850ad43-67ac-4123-af97-41f809fb9a41.gif)
+  Output of Probabilistic Road-Map
+
+  ![AT3 - PRM](Gif%20and%20Data/GIF/AT3%20-%20PRM(2).png)
 
 ### Discussion
   

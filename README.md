@@ -113,9 +113,29 @@ The edit-test-debug cycle is extraordinarily quick because there is no compilati
 ### Result
   The most suitable aircrafts for the first,second and third scenario are A330, A350 and A330 respectively.
   
-  
-  ![Task 1 - S2](https://user-images.githubusercontent.com/116062601/202095748-b298c1a3-aa85-4e87-bab3-bec975108a68.gif)
+  Task 1 - Scenario 1:
 
+  ![Task 1 - S1](Gif%20and%20Data/GIF/Task%201%20-%20S1.gif)
+
+  Output for scenario 1:
+  
+  ![Data for scenario 1](Gif%20and%20Data/GIF/Task%201%20-%20S1.png)
+
+  Task 1 - Scenario 2:
+
+  ![Task 1 - S2](https://user-images.githubusercontent.com/116062601/202095748-b298c1a3-aa85-4e87-bab3-bec975108a68.gif)
+  
+  Output for scenario 2:
+
+  ![Data for scenario 2](Gif%20and%20Data/GIF/Task%201%20-%20S2.png)
+
+  Task 1 - Scenario 3:
+
+  ![Task 1 - S3](Gif%20and%20Data/GIF/Task%201%20-%20S3.gif)
+  
+  Output for scenario 3:
+
+  ![Data for scenario 3](Gif%20and%20Data/GIF/Task%201%20-%20S3.png)
   
 ### Discussion
   The first task was to find out an appropriate aircraft model that achieve minimum cost for the challenge assigned.The first scenario is to consider 3000 passengers travelling within one week when the maximum number of flights that we can afford is 12 per one week. The time cost should be medium and the fuel cost should be 0.76$/kg. Considering this scenario the most appropriate aircraft is A330-900neo.In this case, A321 can't meet the requirements. And the cost of aircraft A350 is much more than A330. The second scenario is where 1250 passengers travel within this month and we can afford 5 flights per week which makes it 20 flights per month.In this scenario the most profitable aircraft model is A350-900. And the third scenario is where 2500 passengers need to travel within this week and only 25 flights can be afforded within this week.Considering the circumstamces of this particular scenario the best aircraft model is A330-900neo because it is the most cost effective. 

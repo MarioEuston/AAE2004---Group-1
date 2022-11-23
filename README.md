@@ -226,7 +226,8 @@ As the obstacle becomes more dense in a certain area, it makes the route plannin
 ### Methodology
   
 ### Results 
-
+  In this task, we need to compare two different algorithms to with Astar, we use the method same as above in the domain between x=-10 to x =30, y=-10 to y=30, we       chose 2 among 43 algorithms, which are Dijkstra Planning and Probabilistic Road-Map. First, we started with Dijkstra Planning. Dijkstra Planning spreads out cyan       points from the starting point, which are some searched nodes, to find the end point, and then locate the shortest path. Then, we use the Probabilistic Road-Map,       which is based on Dijkstra but with a simpler approach to the goal points, this algorithm randomly spread out consideration points on the grid to find the shortest     path by linking   up the suitable points, there will be a cross on the suitable points for displaying the shortest path. 
+  
   Additional task 3 - Dijkstra Algorithm
 
   ![AT3 - Dijkstr](https://user-images.githubusercontent.com/116062601/202213338-cfda49fb-b38f-45a0-badc-e5d5d5a15555.gif)
@@ -244,6 +245,7 @@ As the obstacle becomes more dense in a certain area, it makes the route plannin
   ![AT3 - PRM](Gif%20and%20Data/GIF/AT3%20-%20PRM(2).png)
 
 ### Discussion
+  After applying Dijkstra Planning and Probabilistic Road-Map to the same scenario to find the shortest path, we can see the difference between these two algorithms     and A star. First, Dijkstra is simpler than Astar and can find more possibilities, however, it operates slower because it is less smart, therefore it is not as good   as Astar. Next, PRM is also simpler than Astar, and operates faster than Astar although it is randomly spreading out points. This algorithm is more complex but it is   more convenient on operation, therefore it is better than Astar. 
   
 ## Reflective Essays
 ### AISHY Prithula Prashun

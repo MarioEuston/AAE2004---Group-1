@@ -224,9 +224,9 @@ As the obstacle becomes more dense in a certain area, it makes the route plannin
 ## Additional Task 3: Methodology Results and Discussion
 
 ### Methodology
+  In this task, we need to compare two different algorithms to with Astar, we use the method same as above in the domain between x=-10 to x =30, y=-10 to y=30, we       chose 2 among 43 algorithms, which are Dijkstra Planning and Probabilistic Road-Map. First, we started with Dijkstra Planning. Dijkstra Planning spreads out cyan       points from the starting point, which are some searched nodes, to find the end point, and then locate the shortest path. Then, we use the Probabilistic Road-Map,       which is based on Dijkstra but with a simpler approach to the goal points, this algorithm randomly spread out consideration points on the grid to find the shortest     path by linking   up the suitable points, there will be a cross on the suitable points for displaying the shortest path. 
   
 ### Results 
-  In this task, we need to compare two different algorithms to with Astar, we use the method same as above in the domain between x=-10 to x =30, y=-10 to y=30, we       chose 2 among 43 algorithms, which are Dijkstra Planning and Probabilistic Road-Map. First, we started with Dijkstra Planning. Dijkstra Planning spreads out cyan       points from the starting point, which are some searched nodes, to find the end point, and then locate the shortest path. Then, we use the Probabilistic Road-Map,       which is based on Dijkstra but with a simpler approach to the goal points, this algorithm randomly spread out consideration points on the grid to find the shortest     path by linking   up the suitable points, there will be a cross on the suitable points for displaying the shortest path. 
   
   Additional task 3 - Dijkstra Algorithm
 

@@ -357,11 +357,15 @@ def main():
     for i in np.arange(-10, 60, 0.1): # draw the left border
         ox.append(-10.0)
         oy.append(i)
-    n = 1
-    while n<2000:
-        ox.append(np.random.randint(-9,60))
-        oy.append(np.random.randint(-9,60))
-        n=n+1
+    k = 1
+    while k<2000:
+        m = np.random.randint(-9,60)
+        n = np.random.randint(-9,60)
+        if m != sx and m != sx+1 and m != sx-1 or n !=sy and n != sy+1 and n != sy-1:
+            if m != gx and m != gx+1 and m != gx-1 or n !=gy and n != gy+1 and n != gy-1:
+                ox.append(m)
+                oy.append(n)
+        k=k+1
         
     # set cost intesive area 1
     tc_x, tc_y = [], []
